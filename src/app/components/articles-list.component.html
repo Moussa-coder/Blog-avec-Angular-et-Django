@@ -1,0 +1,16 @@
+<div *ngIf="loading" class="text-center mt-5">
+  <p>Chargement des articles...</p>
+</div>
+
+<div *ngIf="!loading && articles.length > 0" class="articles-list">
+  <div *ngFor="let article of articles" class="article-card">
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.summary }}</p>
+    <button>Lire la suite</button>
+  </div>
+</div>
+
+<div *ngIf="!loading && articles.length === 0" class="text-center mt-5">
+  <p>Aucun article disponible.</p>
+</div>
+
